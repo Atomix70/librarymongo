@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Books</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/ldbtn.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/cards.css" rel="stylesheet">
+    
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand"><span class="material-icons">
+        import_contacts
+        </span></a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+            <a href="/admin">Home</a>
+          </li>
+          <li>
+            <a href="/admin/admin-books">Books</a>
+          </li>
+          <li>
+            <a href="/admin/admin-authors">Authors</a>
+          </li>
+          <li>
+            <a href="/admin/addbook">Add book</a>
+          </li>
+          <li>
+            <a href="/admin/addauthor">Add Author</a>
+          </li>
+        <!-- <li>
+          <a href="#">Add a new book</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li>
+            <a href="/admin">ADMIN</a>
+          </li>
+          <li>
+            <a href="/">LOGOUT</a>
+          </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">search</i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="material-icons">search</i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        
+        <h1>Books&nbsp;<img src="/images/logo.svg" >
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          <section class="cards-wrapper">
+
+            <%for(i=0;i<books.length;i++){%>
+            <div class="card-grid-space">
+              <div class="num"><%=i+1%></div>
+              <a class="card" href="./admin-books/<%=books[i]._id%>" style="--bg-img: url(/<%=books[i].Image%>)">
+                <div>
+                  <h1><%=books[i].Title%></h1>
+                  <!-- <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p> -->
+                  <div class="date"><%=books[i].Language%></div>
+                  <div class="tags">
+                    <div class="tag"><%=books[i].Author%></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <%}%>
+    </section> 
+        </div>
+      </div>
+      <div class="text-center">
+      <!-- <div class="btn btn-primary ld-ext-right" onclick="this.classList.toggle('running')">Load More<div class="ld ld-ring ld-spin"></div></div>                                                                                -->
+                                               
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>  
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Books</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/ldbtn.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/cards.css" rel="stylesheet">
+    
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand"><span class="material-icons">
+        import_contacts
+        </span></a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+      <li>
+        <a href="/admin">Home</a>
+      </li>
+      <li>
+        <a href="/admin/admin-books">Books</a>
+      </li>
+      <li>
+        <a href="/admin/admin-authors">Authors</a>
+      </li>
+      <li>
+        <a href="/admin/addbook">Add book</a>
+      </li>
+      <li>
+        <a href="/admin/addauthor">Add Author</a>
+      </li>
+        <!-- <li>
+          <a href="#">Add a new book</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li>
+          <a href="/admin">ADMIN</a>
+        </li>
+        <li>
+          <a href="/">LOGOUT</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">search</i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="material-icons">search</i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        
+        <h1>Authors&nbsp;<img src="/images/logo.svg" >
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          <section class="cards-wrapper">
+
+            <%for(i=0;i<authors.length;i++){%>
+            <div class="card-grid-space">
+              <div class="num"><%=i+1%></div>
+              <a class="card" href="./admin-authors/<%=authors[i]._id%>" style="--bg-img: url(/<%=authors[i].Image%>)">
+                <div>
+                  <h1><%=authors[i].Name%></h1>
+                  <!-- <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p> -->
+            
+                  <div class="tags">
+                
+                  </div>
+                </div>
+              </a>
+            </div>
+            <%}%>
+            <!-- <div class="card-grid-space">
+              <div class="num">02</div>
+              <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+                <div>
+                  <h1>Basic types of HTML tags</h1>
+                  <p>Learn about some of the most common HTML tags…</p>
+                  <div class="date">2 days ago</div>
+                  <div class="tags">
+                    <div class="tag">devgarage.com</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="card-grid-space">
+              <div class="num">03</div>
+              <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')">
+                <div>
+                  <h1>Links, images and about file paths</h1>
+                  <p>Learn how to use links and images along with file paths…</p>
+                  <div class="date">14 Oct 2020</div>
+                  <div class="tags">
+                    <div class="tag">searchenginewatch.com</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="card-grid-space">
+              <div class="num">04</div>
+              <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://bs-uploads.toptal.io/blackfish-uploads/uploaded_file/file/191791/image-1582329433118-623eeeb89c50ec545990667e9cbebb41.png')">
+                <div>
+                  <h1>Links, images and about file paths</h1>
+                  <p>Learn how to use links and images along with file paths…</p>
+                  <div class="date">11 June 2020</div>
+                  <div class="tags">
+                    <div class="tag">searchenginewatch.com</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="card-grid-space">
+              <div class="num">05</div>
+              <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://i.ytimg.com/vi/r56Tmwr6PAA/maxresdefault.jpg')">
+                <div>
+                  <h1>Links, images and about file paths</h1>
+                  <p>Learn how to use links and images along with file paths…</p>
+                  <div class="date">14 Apr 2020</div>
+                  <div class="tags">
+                    <div class="tag">betali.st</div>
+                  </div>
+                </div>
+              </a>
+            </div> -->
+            <!-- <div class="card-grid-space">
+              <div class="num">06</div>
+              <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/learn-html-book-mockup.png')">
+                <div>
+                  <h1>Links, images and about file paths</h1>
+                  <p>Learn how to use links and images along with file paths…</p>
+                  <div class="date">10 July 2019</div>
+                  <div class="tags">
+                    <div class="tag">betali.st</div>
+                  </div>
+                </div>
+              </a>
+            </div> -->
+            <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+          </section> 
+        </div>
+      </div>
+      <div class="text-center">
+      <!-- <div class="btn btn-primary ld-ext-right" onclick="this.classList.toggle('running')">Load More<div class="ld ld-ring ld-spin"></div></div>                                                                                -->
+                                               
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>  
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>

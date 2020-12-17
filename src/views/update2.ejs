@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Add Author</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/addbook.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/cards.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+    
+	</head>
+	<body>
+        <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+            <div class="container">
+              <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><span class="material-icons">
+                  import_contacts
+                  </span></a>
+              </div>
+              <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a href="/admin">Home</a>
+                  </li>
+                  <li>
+                    <a href="/admin/admin-books">Books</a>
+                  </li>
+                  <li>
+                    <a href="/admin/admin-authors">Authors</a>
+                  </li>
+                  <li>
+                    <a href="/admin/addbook">Add book</a>
+                  </li>
+                  <li>
+                    <a href="/admin/addauthor">Add Author</a>
+                  </li>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                  <li>
+                    <a href="/admin">ADMIN</a>
+                  </li>
+                  <li>
+                    <a href="/">LOGOUT</a>
+                  </li>
+
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">search</i></a>
+                    <ul class="dropdown-menu" style="padding:12px;">
+                      <form class="form-inline">
+                        <button type="submit" class="btn btn-default pull-right"><i class="material-icons">search</i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                      </form>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container4" id="container4">
+    
+      
+    
+	
+		<form action="./updated/<%=index%>" method="GET">
+			<h1>Add a new Author</h1>
+            <span>Add a new Author name to the library</span>
+            
+               
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="Image" value="<%=author.Image%>" />
+                        <label for="imageUpload"></label>
+                    </div>
+                    <div class="avatar-preview">
+                        <div id="imagePreview" style="background-image: url(/<%=author.Image%>);">
+                        </div>
+                    </div>
+                </div>
+            
+            <br>
+			<input type="text" value="<%=author.Name%>" name="Name"/>
+            <input type="text" value="<%=author.Description%>" name="Description"/>
+            
+			<a href="#"></a>
+			<button type="submit">Update</button>
+        </form>
+       
+    </div>
+    
+    
+ 
+
+<script>
+    function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+            $('#imagePreview').hide();
+            $('#imagePreview').fadeIn(650);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imageUpload").change(function() {
+    readURL(this);
+});
+</script>
+</body>
+
+
+
