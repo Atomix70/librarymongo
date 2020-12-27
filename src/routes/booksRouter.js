@@ -8,8 +8,6 @@ booksRouter.get('/',function(req,res)
 {
     Bookdata.find().then(function(books){
     Authordata.find().then(function(author){
-        // console.log(books[0])
-        // console.log(author)
         res.render("books",{obj,books,author});
     })    
     })
