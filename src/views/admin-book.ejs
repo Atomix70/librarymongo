@@ -139,14 +139,14 @@
 <!-- modal -->
 
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">DELETE</button>
+<button type="button" class="btn btn-primary pull-right delbut" data-toggle="modal" data-target=".bd-example-modal-sm">DELETE</button>
 
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <p>DO YOU REALLY WANT TO DELETE?...</p>
       <form action="./admin-book/delete/<%=index%>" method="GET">
-        <button class="btn btn-primary" type="submit">DELETE</button>
+        <button class="btn btn-primary delbut1" type="submit">DELETE</button>
         </form>
     </div>
   </div>
@@ -154,12 +154,12 @@
 
 
 <form action="./admin-book/update/<%=index%>" method="GET">
-  <button class="btn btn-primary" type="submit">UPDATE</button>
+  <button class="btn btn-primary upbut" type="submit">UPDATE</button>
   </form>
 
 
 <!-- end of desc block -->
-<div class="container"><h3> Other books available by same Author> </h3></div>
+<div class="container"><h3> Other books available by same Author </h3></div>
 <div class="container">
   <div class="row">
     

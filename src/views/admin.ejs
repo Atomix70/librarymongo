@@ -151,7 +151,8 @@
         <div class="panel-body">
           
           <section class="cards-wrapper">
-
+            <%t=books.length%>
+            <%if(t>6){%>
             <%for(i=0;i<6;i++){%>
             <div class="card-grid-space">
               <!-- <div class="num"><%=i+1%></div> -->
@@ -167,6 +168,25 @@
               </a>
             </div>
             <%}%>
+            <%}%>
+            <%if(t<6){%>
+              <%for(i=0;i<t;i++){%>
+              <div class="card-grid-space">
+                <!-- <div class="num"><%=i+1%></div> -->
+                <a class="card" href="/books/<%=books[i]._id%>" style="--bg-img: url(/<%=books[i].Image%>)">
+                  <div>
+                    <h1><%=books[i].Title%></h1>
+                    <!-- <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p> -->
+                    <div class="date"><%=books[i].Language%></div>
+                    <div class="tags">
+                      <div class="tag"><%=books[i].Author%></div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <%}%>
+              <%}%>
+              
    
 <!-- books -->
 
@@ -272,7 +292,7 @@
    	</div><!--/col-12-->
   </div>
 </div> 
-<a class="btn btn-primary btn-lg" href="/books">EXPLORE MORE BOOKS</a>                                                
+<a class="btn btn-primary btn-lg delbut" href="/books">EXPLORE MORE BOOKS</a>                                                
                                                                                 
 <hr>
 
@@ -287,7 +307,8 @@
         <div class="panel-body">
           
           <section class="cards-wrapper">
-
+            <%t=authors.length%>
+            <%if(t>6){%>
             <%for(i=0;i<6;i++){%>
             <div class="card-grid-space">
               <!-- <div class="num"><%=i+1%></div> -->
@@ -302,6 +323,23 @@
               </a>
             </div>
             <%}%>
+            <%}%>
+            <%if(t<6){%>
+              <%for(i=0;i<t;i++){%>
+              <div class="card-grid-space">
+                <!-- <div class="num"><%=i+1%></div> -->
+                <a class="card" href="/authors/<%=authors[i]._id%>" style="--bg-img: url(/<%=authors[i].Image%>)">
+                  <div>
+                    <h1><%=authors[i].Name%></h1>
+            
+                    <div class="tags">
+            
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <%}%>
+              <%}%>
             <!-- <div class="card-grid-space">
               <div class="num">02</div>
               <a class="card" href="#" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
@@ -379,7 +417,7 @@
   </div>
 </div>
                                                 
-<a class="btn btn-primary btn-lg" href="/authors">EXPLORE MORE AUTHORS</a>
+<a class="btn btn-primary btn-lg delbut" href="/authors">EXPLORE MORE AUTHORS</a>
 
 <!-- authors -->
 <hr>

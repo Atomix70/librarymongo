@@ -15,7 +15,7 @@
 // console.log(authors);
 var Bookdata= require("./src/model/Bookdata")
 var Authordata=require("./src/model/Authordata")
-
+var Userdata=require("./src/model/Userdata")
 const express= require('express');
 const { urlencoded } = require("express");
 const app= express();
@@ -79,6 +79,28 @@ app.get('/',function(req,res)
 
 
 // adminrouter
+
+
+Userdata.exists({Email:"admin@gmail.com",Password:"admin"}, function(err,result){
+    if(err)
+    console.log(err)
+    else
+    {
+        if(result){}
+        else
+        {
+             var user={
+                        Name:"",
+                        Email:"admin@gmail.com",
+                        Password:"admin"
+                    }
+            var ad=Userdata(user);
+            ad.save();
+        }
+
+    }
+    // console.log(result)
+})
 
 
 app.listen(port,()=>{console.log("server ready at"+port)});

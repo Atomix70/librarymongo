@@ -2,8 +2,6 @@ const express= require('express');
 const { find } = require('../model/Userdata');
 const loginRouter=express.Router();
 const Userdata=require("../model/Userdata")
-// const swal=require("sweetalert")
-// import swal from sweetAlert
 
 function loginRoutes(obj){
 loginRouter.get('/',function(req,res)
@@ -26,17 +24,21 @@ res.redirect("/")
 )
 
 loginRouter.post("/signin",function(req,res){
-    // console.log(req.body.simail)
-    // console.log(req.body.sip)
+    
    Userdata.find({Email:req.body.simail,Password:req.body.sip}).then(function(user){
        console.log(user.length)
        if(user.length==1){
+           if(user[0].Email=="admin@gmail.com"&&user[0].Password=="admin")
+           {
+               res.redirect("/admin")
+           }
+           else
            res.redirect("/books")
        }
        else
        {    
-        //    swal("wrong credentials")
-           res.redirect("/login")
+    
+           res.render("alerter")
        }
    })
     

@@ -17,6 +17,8 @@ booksRouter.get('/',function(req,res)
 })
 booksRouter.get('/:id',function(req,res)
 {
+// books=[]
+// authors=[]
 const index=req.params.id;
 Bookdata.find().then(function(books){
     Authordata.find().then(function(authors){

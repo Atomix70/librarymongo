@@ -167,7 +167,31 @@ a,a:hover {
   -o-background-size: cover;
   background-size: cover;
 } 
+.delbut 
+{
 
+  background-color: #333333 !important;
+
+}
+.upbut
+{
+  background-color: #333333 !important;
+}
+
+.delbut1{
+  background-color: #333333 !important;
+  margin-bottom: 2%;
+  padding: 2%;
+  position: relative;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.modal-content p{
+
+padding: 5%;
+}
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
